@@ -1,0 +1,6 @@
+
+# Accidental forensics artifacts (PostScript blobs)
+/os
+/re
+.agents/skills/os
+.agents/skills/re
