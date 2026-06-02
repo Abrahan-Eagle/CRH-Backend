@@ -27,7 +27,7 @@ Stack (de arriba abajo):
 1. **JARVIS** — `jarvis-core` + skills `crh-*` (dominio, router, governance usuario)
 2. **Extensiones CRH** — bugfix, modify, hotfix, mission closeout (`.specify/extensions/workflows/`)
 3. **Overrides dual-repo** — `templates/overrides/plan-template.md`, `tasks-template.md` (equivalente preset Laravel+Flutter)
-4. **Constitution v1.2.0** — `.specify/memory/constitution.md` (no reemplazar por template upstream)
+4. **Constitution v1.3.0** — `.specify/memory/constitution.md` (no reemplazar por template upstream)
 5. **Git extension** — hooks en `.specify/extensions.yml` (commits optional)
 6. **Core Spec Kit** — 9 commands + scripts bash
 
@@ -106,7 +106,7 @@ Taxonomía de docs en `docs/crh/`:
 | **Startup / skills** | [SKILLS_STARTUP_USAR_NO_USAR.md](./SKILLS_STARTUP_USAR_NO_USAR.md) | Qué skills startup usar; pack Lanzamiento |
 | **Orquestación** | [ORQUESTACION_MULTIAGENTE.md](./ORQUESTACION_MULTIAGENTE.md) | Referencia multiagente (no Spec Kit producto) |
 
-Estado actual: Spec Kit **v0.9.0** sync parcial, **20** skills SDD, constitution **v1.2.0**, **4** workflows CRH (bugfix, modify, hotfix, mission).
+Estado actual: Spec Kit **v0.9.0** sync parcial, **20** skills SDD, constitution **v1.3.0**, **4** workflows CRH (bugfix, modify, hotfix, mission).
 
 ## Cuándo usar qué
 

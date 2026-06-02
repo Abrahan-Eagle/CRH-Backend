@@ -8,10 +8,28 @@
 
 | Aspecto | Estado |
 |---------|--------|
-| Fase | **0 — Estructura IA + Spec Kit configurados** |
-| Scaffold Laravel | Pendiente |
-| Spec Kit piloto | `specs/001-auth-members/` (artefactos; implement pendiente) |
-| Rama activa | `main` |
+| Fase | **0 cerrada (organización)** — Fase 1 scaffold pendiente OK explícito |
+| JARVIS + docs producto | En rama `dev` (workshop + remediaciones 2026-06-01) |
+| Scaffold Laravel/Flutter | Pendiente (Fase 1) |
+| Spec Kit piloto | `specs/001-auth-members/` — reescribir a Google OAuth antes de implement |
+| Rama activa | `dev` |
+| Agentes IA | **Cursor + Gemini** (eliminados `.claude/`, `.codex/`) |
+
+## Discovery de producto (2026-06-01)
+
+Definición acordada con el cliente (ver [PRODUCT_VISION.md](PRODUCT_VISION.md), [MODULES.md](MODULES.md)):
+
+- **Tipo:** app de **iglesia celular** (híbrido G12 + clásico), **red de iglesias** (principal + asociadas; hoy solo 1 principal).
+- **Plataforma:** Android first (`com.crh.church`, app `crh_app`).
+- **Auth:** Google OAuth, registro abierto, activación instantánea (cliente tiene proyecto Google Cloud).
+- **Jerarquía (8 niveles):** pastor, co-pastor, líder de red/zona, supervisor, líder de célula, timoteo, miembro, visita.
+- **Identidad miembro:** rol/rango + ministerio(s) N:M + célula + líder directo (discipulado) + estado bautismo/encuentro/escuela + familia.
+- **Ministerios:** alabanza, niños, jóvenes, damas, caballeros, intercesión, diaconado, evangelismo, matrimonios, multimedia, + custom.
+- **Audiencias (targeting reusable, anuncios + eventos):** principal + asociada + ministerio + célula (+ por rango opcional). Visibilidad = unión de scopes.
+- **Mejoras aceptadas:** (1) audiencia reusable, (2) permisos por scope, (3) anuncio fijado + push obligatorio, (4) confirmación de lectura, (5) evento → calendario automático, (6) segmentar por rango.
+- **Catálogo:** A1–A5 Sí, B1–B7 Sí, C1–C6 Sí.
+- **Gobierno:** cliente aprueba todo (**OK explícito incl. scaffold**); QA diferido (prueba el cliente).
+- **MySQL local:** `unibicuo_crh`, user `su`, localhost:3306 (solo `.env`, no git).
 
 ## Decisiones tomadas
 
@@ -27,8 +45,9 @@
 10. **Adaptación forense awesome-spec-kits (2026-06-01):** lista curada MetaSpec (referencia, **no instalar**); taxonomía SD-X. [FORENSE_AWESOME_SPEC_KITS_RESUMEN.md](docs/crh/FORENSE_AWESOME_SPEC_KITS_RESUMEN.md)
 11. **Auditoría forense github/spec-kit (2026-06-01):** base actual; sync selectivo v0.8.15→**v0.9.0** (scripts + clarify); **prohibido** `specify init --force`. [FORENSE_SPEC_KIT_RESUMEN.md](docs/crh/FORENSE_SPEC_KIT_RESUMEN.md)
 12. **Router:** feature → specify … **review → accept → closeout**; bug → bugfix; modify (delta); hotfix; trivial → task-pipeline; Lanzamiento → `crh-lanzamiento-docs`
-13. **Módulos MVP:** auth, miembros, anuncios, eventos, devocionales, streaming
+13. **Módulos MVP:** auth (Google), iglesias (principal), miembros/jerarquía, **audiencias**, anuncios, eventos, devocionales, streaming, push básico (ver [MODULES.md](MODULES.md) § orden de implementación como fuente)
 14. **Git:** `dev` → test, `main` → producción; sin push automático
+15. **Workshop Fase 0 (bloques 9–21, 2026-06-01):** decisiones operativas de privacidad, login Google, navegación, donaciones, líderes, panel web, contenido, push, streaming, promoción de roles, familias y multi-iglesia consolidadas en [crh/WORKSHOP_DECISIONS.md](crh/WORKSHOP_DECISIONS.md)
 
 ## Backlog fase 2 (desde forense Zonix-Eats)
 
@@ -47,7 +66,7 @@
 
 1. Scaffold Laravel + Flutter (incluir `crh-i18n`: ARB + `lang/es`; state machines donations/events)
 2. Rama `dev`
-3. `/speckit-implement` spec 001-auth-members tras scaffold
+3. **Reescribir `specs/001-auth-members` a Google OAuth + jerarquía** (hoy describe email/password — `/speckit-modify 001`), luego `/speckit-implement` con OK usuario
 4. CI (Pint + tests)
 
 ## Notas

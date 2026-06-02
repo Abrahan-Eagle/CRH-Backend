@@ -21,6 +21,7 @@
 
 ## Cambios recientes
 
+- **2026-06-01:** **Workshop Fase 0 consolidado** (bloques 9–21): decisiones de privacidad, login Google, navegación, donaciones, líderes, panel web, contenido, push (MVP vs Fase 2), streaming, promoción de roles, familias y multi-iglesia en [docs/crh/WORKSHOP_DECISIONS.md](docs/crh/WORKSHOP_DECISIONS.md). Remediaciones de coherencia: MVP unificado (iglesias+audiencias+push) en PRODUCT_VISION/MODULES/active_context/marketing; `timoteo` en matriz de roles; **constitution v1.2.0 → v1.3.0** (roles 8 niveles + scopes, auth Google).
 - **2026-06-01:** Auditoría forense **github/spec-kit → CRH**: sync selectivo v0.8.15→**v0.9.0** (setup-plan, check-prerequisites, speckit-clarify); capas CRH documentadas; **prohibido** `init --force`. [FORENSE_SPEC_KIT_RESUMEN.md](docs/crh/FORENSE_SPEC_KIT_RESUMEN.md)
 - **2026-06-01:** Adaptación forense **awesome-spec-kits → CRH (referencia)**: taxonomía SD-X, mapa 5 speckits evaluados (openspec/meta-spec descartados); **sin instalar**. [FORENSE_AWESOME_SPEC_KITS_RESUMEN.md](docs/crh/FORENSE_AWESOME_SPEC_KITS_RESUMEN.md), sección ecosistema en [SPEC_KIT_CRH.md](docs/crh/SPEC_KIT_CRH.md).
 - **2026-06-01:** Adaptación forense **spec-kitty → CRH (subset)**: WP lanes, mission closeout skills `speckit-review|accept|closeout` (20 SDD), `.specify/extensions/workflows/mission/`, constitution **v1.2.0**, piloto WP en `001-auth-members/tasks.md`, [FORENSE_SPEC_KITTY_RESUMEN.md](docs/crh/FORENSE_SPEC_KITTY_RESUMEN.md). Sin CLI.

@@ -4,7 +4,9 @@
 > **Canon largo:** [AGENTS.md](../../AGENTS.md), [.cursorrules](../../.cursorrules).  
 > **Front hermano:** `../CRH-Frontend` — rutas Flutter en planes/tasks con prefijo explícito.
 
-**Version**: 1.2.0 | **Ratified**: 2026-06-01 | **Last Amended**: 2026-06-01
+**Version**: 1.3.0 | **Ratified**: 2026-06-01 | **Last Amended**: 2026-06-01
+
+> **v1.3.0 (2026-06-01):** roles alineados a la jerarquía celular de 8 niveles + scopes; módulos MVP incluyen iglesias, audiencias y push básico. Fuente de roles/permisos: [docs/MODULES.md](../../docs/MODULES.md); decisiones operativas: [docs/crh/WORKSHOP_DECISIONS.md](../../docs/crh/WORKSHOP_DECISIONS.md).
 
 ---
 
@@ -47,20 +49,27 @@
 8. **Uploads:** max 5MB; allowed MIME types only; moderate pastoral content per `crh-content-moderation`.
 9. **PII miembros:** minimizar exposición; AppSec en auth y exports.
 
-### CRH domain modules (MVP)
+### CRH domain modules
 
-| Módulo | Skill |
-|--------|-------|
-| Miembros / auth | `crh-members`, `crh-api-patterns` |
-| Eventos | `crh-events` |
-| Anuncios | `crh-announcements` |
-| Donaciones | `crh-donations` |
-| Ministerios | `crh-ministries` |
-| Devocionales | `crh-devotionals` |
-| Streaming | `crh-streaming` |
-| Chat grupal (fase 2) | `crh-group-chat`, `crh-realtime-events` |
+| Módulo | Skill | Fase |
+|--------|-------|------|
+| Auth Google + jerarquía | `crh-api-patterns`, `crh-members` | MVP |
+| Iglesias (principal/asociadas) | `crh-api-patterns` | MVP (base) |
+| Miembros / perfil / familia | `crh-members` | MVP |
+| Audiencias (targeting reusable) | `crh-api-patterns` | MVP |
+| Anuncios (segmentados, fijado, lectura) | `crh-announcements` | MVP |
+| Eventos (calendario, inscripción) | `crh-events` | MVP |
+| Devocionales | `crh-devotionals` | MVP |
+| Streaming | `crh-streaming` | MVP |
+| Push básico (FCM, críticos, recordatorios, en vivo) | `crh-realtime-events` | MVP |
+| Donaciones | `crh-donations` | Fase 2 |
+| Células / ministerios / asistencia / reportes / consolidación | `crh-ministries`, `crh-members` | Fase 2 |
+| Chat grupal | `crh-group-chat`, `crh-realtime-events` | Fase 2 |
+| Panel web pastor/admin | `crh-api-patterns` | Fase 2 |
 
-**Roles:** `admin`, `pastor`, `leader`, `member`.
+**Roles (jerarquía celular, 8 niveles + liderazgo de ministerio):** `admin`, `pastor`, `copastor`, `red_leader`, `supervisor`, `cell_leader`, `ministry_leader`, `timoteo`, `member`, `visit`. Permisos **por scope** (principal → red → célula → ministerio). Fuente canónica: [docs/MODULES.md](../../docs/MODULES.md) § Roles y permisos. Promoción de roles: [docs/crh/WORKSHOP_DECISIONS.md](../../docs/crh/WORKSHOP_DECISIONS.md) Bloque 18.
+
+**Auth:** Google OAuth (registro abierto, rol inicial `visit`). Email/password no es el camino del piloto.
 
 **Realtime:** Pusher + FCM (`crh_fcm`) — **NO WebSocket directo**.
 
@@ -91,7 +100,7 @@ Do not claim completion without running relevant gates.
 
 ## VI. Spec-Driven Workflow (Spec Kit)
 
-### Workflow selection (constitution v1.2.0)
+### Workflow selection (constitution v1.3.0)
 
 | Workflow | Command | When | Test order |
 |----------|---------|------|------------|
